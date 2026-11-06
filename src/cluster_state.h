@@ -93,6 +93,7 @@ struct clusterState {
     slotStat slot_stats[CLUSTER_SLOTS];
     unsigned long long stat_cluster_links_buffer_limit_exceeded; /* Total times links freed due to buffer limit. */
     int before_sleep_handle_slot_migration;
+    int replica_migration_in_progress; /* Our replica migration hasn't taken effect yet */
     void *protocol_data; /* Protocol-specific state (e.g. clusterLegacyState) */
 };
 
